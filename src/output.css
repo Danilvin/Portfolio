@@ -1,4 +1,6 @@
 /*! tailwindcss v4.1.17 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,15 +9,12 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-green-500: oklch(72.3% 0.219 149.579);
-    --spacing: 0.25rem;
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-bold: 700;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --font-weight-black: 900;
+    --tracking-widest: 0.1em;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-raleway: "Raleway", sans-serif;
+    --font-domine: "Domine", sans-serif;
   }
 }
 @layer base {
@@ -170,11 +169,32 @@
   .mt-\[33px\] {
     margin-top: 33px;
   }
+  .mt-\[206px\] {
+    margin-top: 206px;
+  }
+  .mb-\[94px\] {
+    margin-bottom: 94px;
+  }
+  .ml-\[120px\] {
+    margin-left: 120px;
+  }
   .flex {
     display: flex;
   }
   .table {
     display: table;
+  }
+  .h-\[326px\] {
+    height: 326px;
+  }
+  .w-\[589px\] {
+    width: 589px;
+  }
+  .w-\[662px\] {
+    width: 662px;
+  }
+  .w-\[1440px\] {
+    width: 1440px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -199,8 +219,42 @@
   .bg-\[\#290038\] {
     background-color: #290038;
   }
+  .font-\[Domine\] {
+    font-family: Domine;
+  }
+  .font-\[Raleway\] {
+    font-family: Raleway;
+  }
+  .font-domine {
+    font-family: var(--font-domine);
+  }
+  .font-raleway {
+    font-family: var(--font-raleway);
+  }
   .text-\[20px\] {
     font-size: 20px;
+  }
+  .text-\[32px\] {
+    font-size: 32px;
+  }
+  .text-\[80px\] {
+    font-size: 80px;
+  }
+  .leading-\[100\%\] {
+    --tw-leading: 100%;
+    line-height: 100%;
+  }
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
+  .tracking-\[0em\] {
+    --tw-tracking: 0em;
+    letter-spacing: 0em;
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
   }
   .text-\[\#AFFC41\] {
     color: #AFFC41;
@@ -211,38 +265,9 @@
   .underline {
     text-decoration-line: underline;
   }
-  .opacity-50 {
-    opacity: 50%;
-  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
-  }
-  .transition-colors {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .hover\:text-\[\#AFFC41-opacity-50\] {
-    &:hover {
-      @media (hover: hover) {
-        color: #AFFC41-opacity-50;
-      }
-    }
-  }
-  .hover\:text-\[\#AFFC41\] {
-    &:hover {
-      @media (hover: hover) {
-        color: #AFFC41;
-      }
-    }
-  }
-  .hover\:opacity-50 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 50%;
-      }
-    }
   }
 }
 @property --tw-space-x-reverse {
@@ -255,6 +280,18 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -265,6 +302,9 @@
     *, ::before, ::after, ::backdrop {
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-outline-style: solid;
     }
   }
