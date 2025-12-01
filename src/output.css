@@ -9,6 +9,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --spacing: 0.25rem;
     --font-weight-black: 900;
     --tracking-widest: 0.1em;
     --default-font-family: var(--font-sans);
@@ -166,11 +167,20 @@
   }
 }
 @layer utilities {
+  .mt-32 {
+    margin-top: calc(var(--spacing) * 32);
+  }
   .mt-\[33px\] {
     margin-top: 33px;
   }
+  .mt-\[95px\] {
+    margin-top: 95px;
+  }
   .mt-\[206px\] {
     margin-top: 206px;
+  }
+  .mb-64 {
+    margin-bottom: calc(var(--spacing) * 64);
   }
   .mb-\[94px\] {
     margin-bottom: 94px;
@@ -193,17 +203,30 @@
   .w-\[662px\] {
     width: 662px;
   }
-  .w-\[1440px\] {
-    width: 1440px;
-  }
   .border-collapse {
     border-collapse: collapse;
   }
   .resize {
     resize: both;
   }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-baseline {
+    align-items: baseline;
+  }
+  .items-center {
+    align-items: center;
+  }
   .justify-center {
     justify-content: center;
+  }
+  .space-y-\[90px\] {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(90px * var(--tw-space-y-reverse));
+      margin-block-end: calc(90px * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .space-x-\[60px\] {
     :where(& > :not(:last-child)) {
@@ -212,18 +235,19 @@
       margin-inline-end: calc(60px * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .space-x-\[222px\] {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(222px * var(--tw-space-x-reverse));
+      margin-inline-end: calc(222px * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
   .bg-\[\#290038\] {
     background-color: #290038;
-  }
-  .font-\[Domine\] {
-    font-family: Domine;
-  }
-  .font-\[Raleway\] {
-    font-family: Raleway;
   }
   .font-domine {
     font-family: var(--font-domine);
@@ -237,6 +261,9 @@
   .text-\[32px\] {
     font-size: 32px;
   }
+  .text-\[36px\] {
+    font-size: 36px;
+  }
   .text-\[80px\] {
     font-size: 80px;
   }
@@ -247,10 +274,6 @@
   .font-black {
     --tw-font-weight: var(--font-weight-black);
     font-weight: var(--font-weight-black);
-  }
-  .tracking-\[0em\] {
-    --tw-tracking: 0em;
-    letter-spacing: 0em;
   }
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
@@ -269,6 +292,11 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-space-x-reverse {
   syntax: "*";
@@ -300,6 +328,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
