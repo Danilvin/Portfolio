@@ -41,7 +41,7 @@
         </div>
     </section>
     <!-- Education section -->
-    <section class="">
+    <section class="mb-32">
         <h2 class="flex justify-center text-[#AFFC41] text-[36px] font-raleway font-black">ОБРАЗОВАНИЕ</h2>
         <div class="flex">
             <P class="mt-[185px] text-[#FDFDFD] text-[24px] w-[375px] h-[216px] ml-[222px] whitespace-pre-line uppercase">
@@ -56,6 +56,47 @@
             </P>
             <img src="./img/rgpulogo.svg" alt="" class="ml-[168px] mt-5">  
         </div>
+    </section class="mb-32">
+    <!-- Portfolio section -->
+    <section>
+        <h2 class="flex justify-center text-[#AFFC41] text-[36px] font-raleway font-black">ПОРТФОЛИО</h2>
+        
+        <div class="tabs flex justify-center space-x-5 mt-[15px]" id="tabs">
+            <button class="tab py-2 px-4 text-[#AFFC41] text-[24px] hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="1">
+                ТИПОГРАФИКА
+            </button>
+            <button class="tab py-2 px-4 text-[#AFFC41] text-[24px] opacity-50 hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="2">
+                КОМПОЗИЦИЯ
+            </button>
+            <button class="tab py-2 px-4 text-[#AFFC41] text-[24px] opacity-50 hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="3">
+                ЭКСЛИБРИС
+            </button>
+        </div>
+
+        <div class="tab-content p-4 flex justify-center items-center space-x-[90px]" id="tab-1">
+                <img src="img/button-left.svg" alt="" onclick="slide(-1)" class="cursor-pointer">
+                <div class="w=[791px] h-[564px] overflow-hidden slider1">
+                    <img src="./img/tipografika-1.jpg" alt="" class="w-full h-full">
+                    <img src="./img/tipografika-2.jpg" alt="" class="w-full h-full">
+                </div>
+                <img src="img/button-left.svg" alt="" class="rotate-180 cursor-pointer" onclick="slide(1)">
+        </div>
+        <div class="tab-content p-4 hidden flex justify-center items-center space-x-[90px]" id="tab-2">
+            <img src="img/button-left.svg" alt="" onclick="slide(-1)" class="cursor-pointer">
+                <div class="w=[791px] h-[564px] overflow-hidden slider2">
+                    <img src="./img/composition1.jpg" alt="" class="w-full h-full">
+                    <img src="./img/composition2.jpg" alt="" class="w-full h-full">
+                    <img src="./img/composition3.jpg" alt="" class="w-full h-full">
+                </div>
+            <img src="img/button-left.svg" alt="" class="rotate-180 cursor-pointer" onclick="slide(1)">
+        </div>
+        <div class="tab-content p-4 hidden flex justify-center items-center space-x-[90px]" id="tab-3">
+            <div class="w=[791px] h-[564px] overflow-hidden">
+                    <img src="./img/exlibris.jpg" alt="" class="w-full h-full">
+            </div>
+        </div>
     </section>
+
+<script src="./script.js"></script>
 </body>
 </html>

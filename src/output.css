@@ -9,7 +9,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
     --spacing: 0.25rem;
+    --font-weight-medium: 500;
     --font-weight-black: 900;
     --tracking-widest: 0.1em;
     --default-font-family: var(--font-sans);
@@ -170,14 +173,11 @@
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
-  .mt-10 {
-    margin-top: calc(var(--spacing) * 10);
-  }
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
   }
-  .mt-\[20px\] {
-    margin-top: 20px;
+  .mt-\[15px\] {
+    margin-top: 15px;
   }
   .mt-\[33px\] {
     margin-top: 33px;
@@ -191,17 +191,11 @@
   .mt-\[206px\] {
     margin-top: 206px;
   }
-  .mr-\[126px\] {
-    margin-right: 126px;
-  }
   .mb-32 {
     margin-bottom: calc(var(--spacing) * 32);
   }
   .mb-\[94px\] {
     margin-bottom: 94px;
-  }
-  .mb-\[128px\] {
-    margin-bottom: 128px;
   }
   .ml-\[120px\] {
     margin-left: 120px;
@@ -212,17 +206,29 @@
   .ml-\[222px\] {
     margin-left: 222px;
   }
+  .block {
+    display: block;
+  }
+  .contents {
+    display: contents;
+  }
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
+  .hidden {
+    display: none;
   }
   .h-\[216px\] {
     height: 216px;
   }
   .h-\[326px\] {
     height: 326px;
+  }
+  .h-\[564px\] {
+    height: 564px;
+  }
+  .h-full {
+    height: 100%;
   }
   .w-\[375px\] {
     width: 375px;
@@ -233,11 +239,14 @@
   .w-\[662px\] {
     width: 662px;
   }
-  .border-collapse {
-    border-collapse: collapse;
+  .w-full {
+    width: 100%;
   }
-  .resize {
-    resize: both;
+  .rotate-180 {
+    rotate: 180deg;
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -251,31 +260,18 @@
   .justify-center {
     justify-content: center;
   }
-  .justify-end {
-    justify-content: flex-end;
-  }
-  .justify-items-end {
-    justify-items: end;
-  }
-  .space-y-5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-\[20px\] {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(20px * var(--tw-space-y-reverse));
-      margin-block-end: calc(20px * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
   .space-y-\[90px\] {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(90px * var(--tw-space-y-reverse));
       margin-block-end: calc(90px * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 5) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .space-x-\[60px\] {
@@ -285,6 +281,13 @@
       margin-inline-end: calc(60px * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .space-x-\[90px\] {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(90px * var(--tw-space-x-reverse));
+      margin-inline-end: calc(90px * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .space-x-\[222px\] {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
@@ -292,15 +295,20 @@
       margin-inline-end: calc(222px * calc(1 - var(--tw-space-x-reverse)));
     }
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .overflow-hidden {
+    overflow: hidden;
   }
   .bg-\[\#290038\] {
     background-color: #290038;
   }
-  .align-baseline {
-    vertical-align: baseline;
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .font-domine {
     font-family: var(--font-domine);
@@ -335,9 +343,6 @@
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
   }
-  .whitespace-pre {
-    white-space: pre;
-  }
   .whitespace-pre-line {
     white-space: pre-line;
   }
@@ -347,18 +352,41 @@
   .text-\[\#FDFDFD\] {
     color: #FDFDFD;
   }
-  .capitalize {
-    text-transform: capitalize;
-  }
   .uppercase {
     text-transform: uppercase;
   }
   .underline {
     text-decoration-line: underline;
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .decoration-\[13\%\] {
+    text-decoration-thickness: 13%;
+  }
+  .underline-offset-\[30\%\] {
+    text-underline-offset: 30%;
+  }
+  .opacity-50 {
+    opacity: 50%;
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .hover\:decoration-\[13\%\] {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-thickness: 13%;
+      }
+    }
+  }
+  .hover\:underline-offset-\[30\%\] {
+    &:hover {
+      @media (hover: hover) {
+        text-underline-offset: 30%;
+      }
+    }
   }
 }
 @property --tw-space-y-reverse {
@@ -370,11 +398,6 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-leading {
   syntax: "*";
@@ -388,21 +411,14 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
-      --tw-outline-style: solid;
     }
   }
 }
