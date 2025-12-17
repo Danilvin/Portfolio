@@ -45,3 +45,11 @@ function slide(n){showImg(indexValue += n)};
 
 let indexValue = 1;
 showImg(indexValue);
+
+function toggleDarkmode(){
+    const logo = document.querySelector('.logo');
+
+    document.documentElement.classList.toggle('dark');
+
+    logo.src = html.classList.contains('dark') ? './img/rgpulogo.svg' : './img/rgpulogo-light.svg';
+};

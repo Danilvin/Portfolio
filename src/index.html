@@ -1,32 +1,36 @@
 <!doctype html>
-<html>
+<html class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
   <title>Potfolio</title>
 </head>
-<body class="bg-[#290038]">
+<body class="bg-[#F0C7FF] dark:bg-[#290038]">
     <!-- Navbar -->
-    <nav class="flex space-x-[60px] justify-center mt-[33px] text-[20px] font-raleway">
-        <a href="" class="text-[#FDFDFD]">обо мне</a>
-        <a href="" class="text-[#FDFDFD]">навыки</a>
-        <a href="" class="text-[#FDFDFD]">образование</a>
-        <a href="" class="text-[#FDFDFD]">портфолио</a>
-        <a href="" class="text-[#FDFDFD]">контакты</a>
+    <nav class="flex space-x-[60px] justify-center mt-[33px] text-[20px] font-raleway h-[70px] items-center">
+        <a href="#hero" class="dark:hover:text-[#AFFC41] hover:text-[#0600C2]">обо мне</a>
+        <a href="#skills" class="dark:hover:text-[#AFFC41] hover:text-[#0600C2]">навыки</a>
+        <a href="#education" class="dark:hover:text-[#AFFC41] hover:text-[#0600C2]">образование</a>
+        <a href="#portfolio" class="dark:hover:text-[#AFFC41] hover:text-[#0600C2]">портфолио</a>
+        <a href="#contacts" class="dark:hover:text-[#AFFC41] hover:text-[#0600C2]">контакты</a>
+        <button class="flex justify-center items-center" id="theme-switch" onclick="toggleDarkmode()">
+            <img src="./img/darkmode.svg" alt="" class="dark:hidden flex">
+            <img src="./img/lightmode.svg" alt="" class="dark:flex hidden">
+        </button>
     </nav>
     <!-- Hero -->
-    <section class="flex mt-[206px] ml-[120px] w-[662px] h-[326px]">
+    <section class="flex mt-[206px] ml-[120px] w-[662px] h-[326px]" id="hero">
         <div>
-            <h1 class="text-[#AFFC41] text-[80px] leading-[100%] mb-[94px] font-raleway font-black tracking-widest">ВИНОГРАДОВ ДАНИЛ</h1>
-            <p class="text-[#FDFDFD] text-[32px] font-domine w-[589px]">изучаю программирование и дизайн
+            <h1 class="text-[#0600C2] dark:text-[#AFFC41] text-[80px] leading-[100%] mb-[94px] font-raleway font-black tracking-widest">ВИНОГРАДОВ ДАНИЛ</h1>
+            <p class="dark:text-[#FDFDFD] text-[#0F001A] text-[32px] font-domine w-[589px]">изучаю программирование и дизайн
             студент РГПУ им. Герцена 
             </p>
         </div>
     </section>
     <!-- Skills section -->
-    <section class="mb-32 mt-32">
-        <h2 class="flex justify-center text-[#AFFC41] text-[36px] font-raleway font-black">НАВЫКИ</h2>
+    <section class="mb-32 mt-32" id="skills">
+        <h2 class="flex justify-center  text-[36px] font-raleway font-black">НАВЫКИ</h2>
         <div class="mt-[95px]">
               <div class="flex justify-center space-x-[222px] space-y-[90px] items-baseline flex-wrap">
                 <img src="./img/illustrator.svg" alt="">
@@ -41,10 +45,10 @@
         </div>
     </section>
     <!-- Education section -->
-    <section class="mb-32">
-        <h2 class="flex justify-center text-[#AFFC41] text-[36px] font-raleway font-black">ОБРАЗОВАНИЕ</h2>
+    <section class="mb-32" id="education">
+        <h2 class="flex justify-center text-[36px] font-raleway font-black">ОБРАЗОВАНИЕ</h2>
         <div class="flex">
-            <P class="mt-[185px] text-[#FDFDFD] text-[24px]  h-[216px] ml-[222px] whitespace-pre-line uppercase font-domine">
+            <P class="mt-[185px] dark:text-[#FDFDFD] text-[#0F001A] text-[24px]  h-[216px] ml-[222px] whitespace-pre-line uppercase font-domine">
             2023 - настоящее время
 
             Бакалавриат
@@ -54,62 +58,70 @@
             информационные системы
             и технологии (в дизайне)
             </P>
-            <img src="./img/rgpulogo.svg" alt="" class="ml-[168px] mt-5">  
+            <img src="./img/rgpulogo.svg" alt="" class="ml-[168px] mt-5 logo">  
         </div>
-    </section class="mb-32">
+    </section>
     <!-- Portfolio section -->
-    <section>
-        <h2 class="flex justify-center text-[#AFFC41] text-[36px] font-raleway font-black">ПОРТФОЛИО</h2>
+    <section class="mb-32" id="portfolio">
+        <h2 class="flex justify-center text-[36px] font-raleway font-black">ПОРТФОЛИО</h2>
         
         <div class="tabs flex justify-center space-x-5 mt-[15px]" id="tabs">
-            <button class="tab py-2 px-4 text-[#AFFC41] text-[24px] hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="1">
+            <button class="tab py-2 px-4 text-[24px] hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="1">
                 ТИПОГРАФИКА
             </button>
-            <button class="tab py-2 px-4 text-[#AFFC41] text-[24px] opacity-50 hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="2">
+            <button class="tab py-2 px-4 text-[24px] opacity-50 hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="2">
                 КОМПОЗИЦИЯ
             </button>
-            <button class="tab py-2 px-4 text-[#AFFC41] text-[24px] opacity-50 hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="3">
+            <button class="tab py-2 px-4 text-[24px] opacity-50 hover:underline hover:decoration-[13%] hover:underline-offset-[30%] cursor-pointer" data-tab="3">
                 ЭКСЛИБРИС
             </button>
         </div>
 
         <div class="tab-content p-4 flex justify-center items-center space-x-[90px]" id="tab-1">
-                <img src="img/button-left.svg" alt="" onclick="slide(-1)" class="cursor-pointer">
-                <div class="w=[791px] h-[564px] overflow-hidden slider1">
-                    <img src="./img/tipografika-1.jpg" alt="" class="w-full h-full">
-                    <img src="./img/tipografika-2.jpg" alt="" class="w-full h-full">
-                </div>
-                <img src="img/button-left.svg" alt="" class="rotate-180 cursor-pointer" onclick="slide(1)">
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" onclick="slide(-1)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M54.5 109C24.3997 109 0 84.6003 0 54.5C0 24.3997 24.3997 0 54.5 0C84.6003 0 109 24.3997 109 54.5C109 84.6003 84.6003 109 54.5 109ZM65.5635 35.2615C64.7971 34.496 63.7582 34.0661 62.675 34.0661C61.5918 34.0661 60.5529 34.496 59.7865 35.2615L43.4365 51.6115C42.6711 52.3779 42.2411 53.4168 42.2411 54.5C42.2411 55.5832 42.6711 56.6221 43.4365 57.3885L59.7865 73.7385C60.1607 74.1401 60.612 74.4622 61.1134 74.6856C61.6148 74.909 62.156 75.0291 62.7049 75.0388C63.2537 75.0485 63.7988 74.9475 64.3078 74.742C64.8168 74.5364 65.2791 74.2304 65.6673 73.8423C66.0554 73.4541 66.3614 72.9918 66.567 72.4828C66.7725 71.9738 66.8735 71.4287 66.8638 70.8799C66.8541 70.331 66.734 69.7898 66.5106 69.2884C66.2872 68.787 65.9651 68.3357 65.5635 67.9615L52.102 54.5L65.5635 41.0385C66.329 40.2721 66.7589 39.2332 66.7589 38.15C66.7589 37.0668 66.329 36.0279 65.5635 35.2615Z"/>
+            </svg>
+            <div class="w-[791px] h-[564px] overflow-hidden slider1">
+                <img src="./img/tipografika-1.jpg" alt="" class="w-full h-full">
+                <img src="./img/tipografika-2.jpg" alt="" class="w-full h-full">
+            </div>
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg" class="rotate-180 cursor-pointer" onclick="slide(1)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M54.5 109C24.3997 109 0 84.6003 0 54.5C0 24.3997 24.3997 0 54.5 0C84.6003 0 109 24.3997 109 54.5C109 84.6003 84.6003 109 54.5 109ZM65.5635 35.2615C64.7971 34.496 63.7582 34.0661 62.675 34.0661C61.5918 34.0661 60.5529 34.496 59.7865 35.2615L43.4365 51.6115C42.6711 52.3779 42.2411 53.4168 42.2411 54.5C42.2411 55.5832 42.6711 56.6221 43.4365 57.3885L59.7865 73.7385C60.1607 74.1401 60.612 74.4622 61.1134 74.6856C61.6148 74.909 62.156 75.0291 62.7049 75.0388C63.2537 75.0485 63.7988 74.9475 64.3078 74.742C64.8168 74.5364 65.2791 74.2304 65.6673 73.8423C66.0554 73.4541 66.3614 72.9918 66.567 72.4828C66.7725 71.9738 66.8735 71.4287 66.8638 70.8799C66.8541 70.331 66.734 69.7898 66.5106 69.2884C66.2872 68.787 65.9651 68.3357 65.5635 67.9615L52.102 54.5L65.5635 41.0385C66.329 40.2721 66.7589 39.2332 66.7589 38.15C66.7589 37.0668 66.329 36.0279 65.5635 35.2615Z"/>
+            </svg>
         </div>
         <div class="tab-content p-4 hidden flex justify-center items-center space-x-[90px]" id="tab-2">
-            <img src="img/button-left.svg" alt="" onclick="slide(-1)" class="cursor-pointer">
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer" onclick="slide(-1)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M54.5 109C24.3997 109 0 84.6003 0 54.5C0 24.3997 24.3997 0 54.5 0C84.6003 0 109 24.3997 109 54.5C109 84.6003 84.6003 109 54.5 109ZM65.5635 35.2615C64.7971 34.496 63.7582 34.0661 62.675 34.0661C61.5918 34.0661 60.5529 34.496 59.7865 35.2615L43.4365 51.6115C42.6711 52.3779 42.2411 53.4168 42.2411 54.5C42.2411 55.5832 42.6711 56.6221 43.4365 57.3885L59.7865 73.7385C60.1607 74.1401 60.612 74.4622 61.1134 74.6856C61.6148 74.909 62.156 75.0291 62.7049 75.0388C63.2537 75.0485 63.7988 74.9475 64.3078 74.742C64.8168 74.5364 65.2791 74.2304 65.6673 73.8423C66.0554 73.4541 66.3614 72.9918 66.567 72.4828C66.7725 71.9738 66.8735 71.4287 66.8638 70.8799C66.8541 70.331 66.734 69.7898 66.5106 69.2884C66.2872 68.787 65.9651 68.3357 65.5635 67.9615L52.102 54.5L65.5635 41.0385C66.329 40.2721 66.7589 39.2332 66.7589 38.15C66.7589 37.0668 66.329 36.0279 65.5635 35.2615Z"/>
+            </svg>
                 <div class="w=[791px] h-[564px] overflow-hidden slider2">
                     <img src="./img/composition1.jpg" alt="" class="w-full h-full">
                     <img src="./img/composition2.jpg" alt="" class="w-full h-full">
                     <img src="./img/composition3.jpg" alt="" class="w-full h-full">
                 </div>
-            <img src="img/button-left.svg" alt="" class="rotate-180 cursor-pointer" onclick="slide(1)">
+            <svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg" class="rotate-180 cursor-pointer" onclick="slide(1)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M54.5 109C24.3997 109 0 84.6003 0 54.5C0 24.3997 24.3997 0 54.5 0C84.6003 0 109 24.3997 109 54.5C109 84.6003 84.6003 109 54.5 109ZM65.5635 35.2615C64.7971 34.496 63.7582 34.0661 62.675 34.0661C61.5918 34.0661 60.5529 34.496 59.7865 35.2615L43.4365 51.6115C42.6711 52.3779 42.2411 53.4168 42.2411 54.5C42.2411 55.5832 42.6711 56.6221 43.4365 57.3885L59.7865 73.7385C60.1607 74.1401 60.612 74.4622 61.1134 74.6856C61.6148 74.909 62.156 75.0291 62.7049 75.0388C63.2537 75.0485 63.7988 74.9475 64.3078 74.742C64.8168 74.5364 65.2791 74.2304 65.6673 73.8423C66.0554 73.4541 66.3614 72.9918 66.567 72.4828C66.7725 71.9738 66.8735 71.4287 66.8638 70.8799C66.8541 70.331 66.734 69.7898 66.5106 69.2884C66.2872 68.787 65.9651 68.3357 65.5635 67.9615L52.102 54.5L65.5635 41.0385C66.329 40.2721 66.7589 39.2332 66.7589 38.15C66.7589 37.0668 66.329 36.0279 65.5635 35.2615Z"/>
+            </svg>
         </div>
         <div class="tab-content p-4 hidden flex justify-center items-center space-x-[90px]" id="tab-3">
-            <div class="w=[791px] h-[564px] overflow-hidden">
+            <div class="w-[791px] h-[564px] overflow-hidden">
                     <img src="./img/exlibris.jpg" alt="" class="w-full h-full">
             </div>
         </div>
     </section>
     <!-- Contacts section -->
-    <section class="mb-[30px]">
-        <h2 class="flex justify-center text-[#AFFC41] text-[192px] font-raleway font-black">КОНТАКТЫ</h2>
+    <section class="mb-[30px]" id="contacts">
+        <h2 class="flex justify-center text-[192px] font-raleway font-black">КОНТАКТЫ</h2>
         <div class="flex items-center space-x-[101px] ml-[242px] mt-[25px]">
             <img src="./img/telegram.svg" alt="">
-            <a target="_blank" rel="noopener noreferrer" href="https://web.telegram.org/" class="text-[#FDFDFD] text-[64px] font-raleway font-black">@telegramusername</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://web.telegram.org/" class="hover:text-[#0600C2] text-[64px] font-raleway font-black dark:hover:text-[#AFFC41] hover:underline hover:underline-offset-[30%]">@telegramusername</a>
         </div>
         <div class="flex items-center space-x-[101px] mt-20 ml-[242px]">
             <img src="./img/gmail.svg" alt="">
-            <a target="_blank" rel="noopener noreferrer" href="https://mail.google.com/" class="text-[#FDFDFD] text-[64px] font-raleway font-black">mailaddress@gmail.com</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://mail.google.com/" class="hover:text-[#0600C2] text-[64px] font-raleway font-black dark:hover:text-[#AFFC41] hover:underline hover:underline-offset-[30%]">mailaddress@gmail.com</a>
         </div>
     </section>
-    <footer class="bg-[#19081C] flex justify-center">
-        <p class="text-[12px] font-domine text-[#FDFDFD] py-9">©  2025 ВИНОГРАДОВ ДАНИЛ</p>
+    <footer class="bg-[#E18DFF] dark:bg-[#19081C] flex justify-center">
+        <p class="text-[12px] font-domine text-[#0F001A] dark:text-[#FDFDFD] py-9">©  2025 ВИНОГРАДОВ ДАНИЛ</p>
     </footer>
 
 <script src="./script.js"></script>

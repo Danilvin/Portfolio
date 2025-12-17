@@ -6,3 +6,32 @@
   --font-raleway: "Raleway", sans-serif;
   --font-domine: "Domine", sans-serif; 
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  [class='dark'] h2 {
+    color: #AFFC41;
+  }
+  h2 {
+    color: #0600C2;
+  }
+  [class='dark'] a {
+    color: #FDFDFD;
+  }
+  a {
+    color: #0F001A;
+  }
+  [class='dark'] button {
+    color:#AFFC41;
+  }
+  button {
+    color:#0600C2;
+  }
+  svg {
+    fill: #0600C2;
+  }
+  [class='dark'] svg {
+    fill: #AFFC41;
+  }
+}
