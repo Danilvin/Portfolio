@@ -1,3 +1,5 @@
+// Tabs
+
 const tabs = document.querySelectorAll('#tabs .tab');
 const tabContents = document.querySelectorAll('.tab-content');
 const activeClass = ['underline', 'decoration-[13%]', 'underline-offset-[30%]'];
@@ -27,6 +29,8 @@ tabs.forEach((tab) => {
   });
 });
 
+// Slider
+
 function showImg(n){
     let i;
     let img = document.querySelectorAll('.slider1 img');
@@ -45,6 +49,8 @@ function slide(n){showImg(indexValue += n)};
 
 let indexValue = 1;
 showImg(indexValue);
+
+// Theme switch
 
 function toggleDarkmode(){
     const logo = document.querySelector('.logo');
