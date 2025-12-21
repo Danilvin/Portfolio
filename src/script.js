@@ -59,3 +59,24 @@ function toggleDarkmode(){
 
     logo.src = html.classList.contains('dark') ? './img/rgpulogo.svg' : './img/rgpulogo-light.svg';
 };
+
+//Modal
+
+var modal = document.getElementById("myModal");
+
+var imgs = document.querySelectorAll('.tab-content div img');
+var modalImg = document.getElementById("img01");
+imgs.forEach((img) => {
+    img.addEventListener('click', () => {
+    modal.style.display = "block";
+    document.documentElement.classList.add('overflow-hidden');
+    modalImg.src = img.src;
+});
+})
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+  modal.style.display = "none";
+  document.documentElement.classList.remove('overflow-hidden');
+}
